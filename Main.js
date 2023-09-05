@@ -27,7 +27,7 @@ elements.forEach((element) => {
 // logger
 function func() {
   console.log("top: " + temp_pos.top, "left: " + temp_pos.left);
-  moveTo();
+  hero.moveTo();
 }
 
 function removeItemOnce(arr, value) {
