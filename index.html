@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class='block'>
+        <div class="flexbox" id="id1"></div><div class="flexbox" id="id2"></div><div class="flexbox" id="id3"></div><br>
+        <div class="flexbox" id="id4"></div><div class="flexbox" id="id5"></div><div class="flexbox" id="id6"></div><br>
+        <div class="flexbox hide"></div><div class="flexbox hide"></div><div class="flexbox hide"></div><br>
+        <div class="flexbox" id="id7"></div><div class="flexbox" id="player"></div><div class="flexbox" id="id9"></div><br>
+        <div id="stats_block">
+            <div class="stats_block">
+                <a>Здоровье: </a><progress id="hp_bar" value="15" max="15"></progress>
+            </div>
+            <div class="stats_block">
+                <a>Мана: </a><progress id="mana_bar" value="20" max="20"></progress>
+            </div>
+            <div class="stats_block">
+                <a>Монет: </a>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="node_modules\animejs\lib\anime.min.js"></script>
+    <script src="Main.js"></script>
+    <script src="Animation.js"></script>
+</html>
