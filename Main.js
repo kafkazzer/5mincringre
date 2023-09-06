@@ -3,6 +3,7 @@ const player = document.getElementById("player");
 
 let temp_id = "";
 let temp_pos = {};
+let temp_en = {};
 let player_cords = player.getBoundingClientRect();
 let player_top = player_cords.top;
 let player_left = player_cords.left;
@@ -19,11 +20,11 @@ elements.forEach((element) => {
     if (spam_stop == 0) {
       temp_id = e.target.id;
       temp_pos = e.target.getBoundingClientRect();
+      temp_en = new Enemy(temp_id);
       func();
     }
   });
 });
-
 // logger
 function func() {
   console.log("top: " + temp_pos.top, "left: " + temp_pos.left);

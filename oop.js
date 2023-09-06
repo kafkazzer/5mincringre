@@ -1,7 +1,7 @@
 class Enemy {
+
     constructor(id) {
       this.id = id;
-      temp_id = "#" + this.id;
     }
   
     sayId() {
@@ -9,6 +9,7 @@ class Enemy {
     }
   
     damage() {
+      temp_id = "#" + this.id;
       anime({
         targets: temp_id,
         rotate: 10,
@@ -20,8 +21,23 @@ class Enemy {
       });
     }
   
+    dead() {
+      removeItemOnce(live_m, this.id);
+      document.this.id.classList.add('hide');
+      temp_id = "#" + this.id;
+      anime({
+        targets: temp_id,
+        rotate: 10,
+        duration: 300,
+        direction: "alternate",
+        scale: 1.2,
+        background: 'rgb(204, 0, 0)',
+        border: "3px solid rgb(204, 0, 0)",
+      });
+    }
+
     ret_strike() {
-        temp_id = "#" + this.id;
+      temp_id = "#" + this.id;
         anime({
             targets: temp_id,
             translateY: player_top - temp_pos.top,
@@ -60,7 +76,7 @@ class Enemy {
   let enemy1 = new Enemy("id1");
   let enemy2 = new Enemy("id2");
   let enemy3 = new Enemy("id3");
-
+  
 
   class Player {
 
@@ -103,6 +119,8 @@ class Enemy {
           easing: "easeInQuad",
         });
         setTimeout(() => {
+          temp_en.damage();
+          spam_stop = 0;
         }, 400);
     }
   }
