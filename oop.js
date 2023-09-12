@@ -2,7 +2,7 @@ class Enemy {
   constructor(id) {
     this.id = id;
   }
-  // говорит характеристики 
+  // говорит характеристики
   sayMe() {
     console.log(this.id, this.hp, this.dm);
   }
@@ -19,14 +19,16 @@ class Enemy {
       // background: 'rgb(204, 0, 0)',
       border: "3px solid rgb(204, 0, 0)",
     });
-    setTimeout(() => {this.ret_strike_all()}, 700);
+    setTimeout(() => {
+      this.ret_strike_all();
+    }, 700);
   }
   //удаляет из массива live_m ID и добавляет класс "hide", далее, анимация как в damage
   //но с заменой фона, что убирает картинку
   dead() {
     removeItemOnce(live_m, this.id);
     // document.this.classList.add("hide");
-    console.log(this.id)
+    console.log(this.id);
     temp_id = "#" + this.id;
     anime({
       targets: temp_id,
@@ -57,27 +59,27 @@ class Enemy {
   }
   //автоматичски вызывается из damage, проходит по массиву всех живых и заставляет их атаковать
   ret_strike_all() {
-    if(live_m.length != 0){
-    let temp = this.id;
-    for (let i = 0; i < live_m.length; i++) {
-      temp_id = live_m[i];
-      temp_pos = temp_id.getBoundingClientRect();
-      anime({
-        targets: temp_id,
-        translateY: player_top - temp_pos.top,
-        translateX: player_left - temp_pos.left,
-        duration: 400,
-        direction: "alternate",
-        easing: "easeInQuad",
-      });
+    if (live_m.length != 0) {
+      let temp = this.id;
+      for (let i = 0; i < live_m.length; i++) {
+        temp_id = live_m[i];
+        temp_pos = temp_id.getBoundingClientRect();
+        anime({
+          targets: temp_id,
+          translateY: player_top - temp_pos.top,
+          translateX: player_left - temp_pos.left,
+          duration: 400,
+          direction: "alternate",
+          easing: "easeInQuad",
+        });
+      }
+      //hero get damage
+      setTimeout(() => {
+        temp_id = temp;
+        hero.damage();
+      }, 400);
     }
-    //hero get damage
-    setTimeout(() => {
-      temp_id = temp;
-      hero.damage();
-    }, 400);
   }
-}
   //автоматичски вызывается из gen
   spawn() {
     temp_id = "#" + this.id;
@@ -95,7 +97,7 @@ let enemy3 = new Enemy("id3");
 let enemy4 = new Enemy("id4");
 let enemy5 = new Enemy("id5");
 let enemy6 = new Enemy("id6");
-enemy1.name = 'enemy1';
+enemy1.name = "enemy1";
 
 class Player {
   constructor(id) {
@@ -113,16 +115,17 @@ class Player {
       // background: 'rgb(204, 0, 0)',
       border: "3px solid rgb(204, 0, 0)",
     });
-    let temp = enemy1.dm+enemy2.dm+enemy3.dm+enemy4.dm+enemy5.dm+enemy6.dm;
+    let temp =
+      enemy1.dm + enemy2.dm + enemy3.dm + enemy4.dm + enemy5.dm + enemy6.dm;
     console.log(temp);
     anime({
-      targets: '#hp_bar',
-      value: [hp_point, hp_point-temp],
+      targets: "#hp_bar",
+      value: [hp_point, hp_point - temp],
       round: 1,
-      easing: 'easeInOutExpo'
+      easing: "easeInOutExpo",
     });
-    hp_point = hp_point-temp;
-    setTimeout(() => spam_stop = 0, 700);
+    hp_point = hp_point - temp;
+    setTimeout(() => (spam_stop = 0), 700);
   }
 
   heal() {
@@ -180,36 +183,26 @@ class gen {
   //a - normal, b - leet, c - treasury, d - event, f - shop, e - sun/moon, g - boss
   a() {
     this.null();
-    let temp_rand = getRandomInRange(1,1);
-    if(temp_rand == 1){
+    let temp_rand = getRandomInRange(1, 1);
+    if (temp_rand == 1) {
       live_m[0] = id1;
-      temp_en = new Enemy('id1');
+      temp_en = new Enemy("id1");
       temp_en.spawn();
-      id1.style.backgroundImage = 'url(2.png)';
+      id1.style.backgroundImage = "url(2.png)";
       enemy1.dm = 4;
       enemy1.hp = 20;
     }
   }
-  b() {
-    this.null();
-  }
-  c() {
-
-  }
-  d() {
-
-  }
-  f() {
-
-  }
-  e() {
-
-  }
+  b() {}
+  c() {}
+  d() {}
+  f() {}
+  e() {}
   g() {
     this.null();
   }
   // сброс всех значений урона
-  null(){
+  null() {
     enemy1.dm = 0;
     enemy2.dm = 0;
     enemy3.dm = 0;
