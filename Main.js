@@ -23,7 +23,7 @@ elements.forEach((element) => {
     if (spam_stop == 0) {
       temp_id = e.target.id;
       temp_pos = e.target.getBoundingClientRect();
-      temp_en = new Enemy(temp_id);
+      temp_en = enemys[temp_id];
       func();
     }
   });
@@ -44,8 +44,8 @@ function generate_lvl() {
   generate.push("g");
 }
 //удаляет ID из массива, используется для работы live_m
-function removeItemOnce(arr, value) {
-  let index = arr.indexOf(value);
+function removeItemOnce(arr, string) {
+  let index = arr.indexOf(string);
   if (index > -1) {
     arr.splice(index, 1);
   }

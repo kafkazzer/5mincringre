@@ -33,11 +33,11 @@
         margin: var(--mr);
     }
     .hide {
-        border: 3px solid transparent;
-        background: transparent;
+        border: 3px solid transparent !important;
+        background: transparent !important;
     }
     #player {
-        background: url(1.png);
+        background: url(hero/1.png);
         background-size: cover;
     }
     #stats_block {
