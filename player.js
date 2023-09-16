@@ -15,14 +15,21 @@ class Player {
       border: "3px solid rgb(204, 0, 0)",
     });
     let temp = enemys["id1"].dm + enemys["id2"].dm;
-    console.log(temp);
+    // console.log(temp);
     anime({
       targets: "#hp_bar",
       value: [hp_point, hp_point - temp],
       round: 1,
       easing: "easeInOutExpo",
     });
+    anime({
+      targets: "#hp_val",
+      value: [hp_point],
+      round: 1,
+      easing: "easeInOutExpo",
+    });
     hp_point = hp_point - temp;
+    hp_val.innerHTML = hp_point;
     setTimeout(() => (spam_stop = 0), 700);
   }
 
@@ -67,6 +74,19 @@ class Player {
       spam_stop = 0;
     }, 1100);
   }
+  //способность 
+  cast(){
+    anime({
+      targets: "#player",
+      duration: 300,
+      direction: "alternate",
+      translateY: -10,
+      scale: 1.1,
+      boxShadow:'0px 0px 10px 0px rgba(0,0,125,0.7)',
+      border: "3px solid rgb(0,0,125)",
+    });
+  }
 }
 let hero = new Player("#player");
-hero.dm = 10;
+hero.dm = 100;
+hero.mn = 0;

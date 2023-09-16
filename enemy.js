@@ -4,7 +4,7 @@ class Enemy {
   }
   // говорит характеристики
   sayMe() {
-    console.log(` ${this.id}, ${this.hp}, ${this.dm}`);
+    // console.log(` ${this.id}, ${this.hp}, ${this.dm}`);
   }
   // собирает Id в строку (нужно для работы anime), после вызывает ret_strike_all().
   // задержка в 700 нужна, что бы не ломалась анимация (duration*2)+100
@@ -32,7 +32,6 @@ class Enemy {
   //но с заменой фона, что убирает картинку
   dead() {
     temp_id = "#" + `${this.id}`;
-    this.null();
     anime({
       targets: temp_id,
       rotate: 10,
@@ -43,6 +42,9 @@ class Enemy {
       boxShadow:'0px 0px 10px 0px rgba(204, 0, 0, 0.7)',
       border: "3px solid rgb(204, 0, 0)",
     });
+    hero.mn = hero.mn + temp_en.mn;
+    money_val.innerHTML = hero.mn;
+    this.null();
     setTimeout(() => (spam_stop = 0), 700);
   }
   //ответный удар, но только одного enemy
@@ -112,6 +114,7 @@ class Enemy {
   null() {
     temp_en.hp = 0;
     temp_en.dm = 0;
+    temp_en.mn = 0;
     let temp = document.getElementById(this.id);
     setTimeout(() => temp.classList.add("hide"), 600);
     removeItemOnce(live_m, temp);

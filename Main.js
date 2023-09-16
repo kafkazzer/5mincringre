@@ -1,5 +1,7 @@
 const elements = document.querySelectorAll(".flexbox");
 const player = document.getElementById("player");
+const hp_val = document.getElementById("hp_val");
+const money_val = document.getElementById("money_val");
 
 let temp_id = "";
 let temp_pos = {};
@@ -13,10 +15,10 @@ let hp_point = 15;
 let mana_bar_max = 20;
 let mana_point = 20;
 let live_m = [];
+//a - normal, b - leet, c - treasury, d - event, f - shop, e - sun/moon, g - boss
 let generate = ["a", "a", "a", "a", "a", "b", "b", "b", "c", "c", "d", "d", "f", "e"];
 let room = 0;
-//a - normal, b - leet, c - treasury, d - event, f - shop, e - sun/moon, g - boss
-console.log("player_top: " + player_top, "player_left: " + player_left);
+let game_class_hero = 1;
 
 elements.forEach((element) => {
   element.addEventListener("click", function (e) {
@@ -24,13 +26,17 @@ elements.forEach((element) => {
       temp_id = e.target.id;
       temp_pos = e.target.getBoundingClientRect();
       temp_en = enemys[temp_id];
-      func();
+      temp_id = document.getElementById(temp_id);
+      if(temp_id.classList.contains('hide') == false){action();}
     }
   });
 });
 // logger
 function func() {
   console.log("top: " + temp_pos.top, "left: " + temp_pos.left);
+}
+//функция запускающая то/иное дейсвие при нажатии
+function action(){
   if (generate[room] == "a" || generate[room] == "b" || generate[room] == "g") {
     hero.attack();
   }

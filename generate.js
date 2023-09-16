@@ -8,24 +8,32 @@ class gen {
     let temp_rand = getRandomInRange(1, 1);
     if (temp_rand == 1) {
       id1.style.backgroundImage = "url(enemy/2.png)";
-      this.spawn_stat("id1", 4, 20, id1);
+      this.spawn_stat("id1", 4, 20, id1, 10);
 
       id2.style.backgroundImage = "url(enemy/2.png)";
-      this.spawn_stat("id2", 4, 20, id2);
-    }
+      this.spawn_stat("id2", 4, 20, id2, 10);
+    } 
   }
   b() {}
-  c() {}
+  c() {
+    let temp_rand = getRandomInRange(1, 1);
+    if(temp_rand == 1){
+      id5.style.backgroundImage = "url(Chest/2.png)";
+      id5.classList.remove("hide");
+    }
+  }
   d() {}
   f() {}
   e() {}
   g() {}
-  spawn_stat(id, dm, hp, idForLive) {
+  spawn_stat(id, dm, hp, idForLive, money) {
     enemys[id].dm = dm;
     enemys[id].hp = hp;
+    enemys[id].mn = money;
     enemys[id].spawn();
     live_m.push(idForLive);
     idForLive.classList.remove("hide");
   }
 }
 let generate_class = new gen();
+generate_class.a()

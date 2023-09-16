@@ -11,18 +11,26 @@
         <div class="flexbox hide" id="id1"></div><div class="flexbox hide" id="id2"></div><div class="flexbox hide" id="id3"></div>
         <div class="flexbox hide" id="id4"></div><div class="flexbox hide" id="id5"></div><div class="flexbox hide" id="id6"></div>
         <div class="flexbox hide"></div><div class="flexbox hide"></div><div class="flexbox hide"></div>
-        <div class="flexbox" id="id7"></div><div class="flexbox" id="player"></div><div class="flexbox" id="id9"></div>
+        <div class="button" id="id7"></div><div class="button" id="player"></div><div class="button" id="id9"></div>
         <div id="stats_block">
             <div class="stats_block">
-                <a>Здоровье: </a><progress id="hp_bar" value="15" max="15"></progress>
+                <a>Здоровье: </a><a id="hp_val">15</a><a>/</a><a id="max_val_hp">15</a>
+                <progress id="hp_bar" value="15" max="15"></progress>
             </div>
             <div class="stats_block">
-                <a>Мана: </a><progress id="mana_bar" value="20" max="20"></progress>
+                <a>Мана: </a><a id="Mana_val">20</a><a>/</a><a id="max_val_mana">20</a>
+                <progress id="mana_bar" value="20" max="20"></progress>
             </div>
             <div class="stats_block">
-                <a>Монет: </a>
+                <a>Монет: </a><a id="money_val">0</a>
             </div>
         </div>
+    </div>
+    <div class="block message_block">
+        <h2>Заголовок</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente totam minus saepe reprehenderit, eius quam laudantium, dolorem, omnis possimus obcaecati voluptate cumque in eaque maxime voluptatibus architecto! Quam, iste obcaecati.</p>
+        <input type="button">
+        <input type="button">
     </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
