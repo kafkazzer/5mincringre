@@ -1,87 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&family=Roboto:wght@300&display=swap');
-    :root {
-        --wd:50px;
-        --ht:100px;
-        --pd:15px;
-        --mr:10px;
-    }
-    * {
-        margin: 0px auto;
-    }
-    body {
-        background: #333;
-        font-size: 25px;
-        color:white;
-        font-family: 'Roboto', sans-serif;
-    }
-    .block {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: calc((var(--wd)*3) + (var(--pd)*3) + (var(--mr)*3) + 100px);
-        /* height: calc((var(--ht)+3) + (var(--pd)*3) + (var(--mr)*3) + 400); */
-        border: 3px solid grey;
-        justify-content: center;    
-        background: #333;
-        margin: 0 0 0 0 !important;
-        padding: 20px;
-    }
-    .message_block {
-        display: inline;
-        padding: 20px;
-        position: absolute;
-        top:800px;
-        height: calc((var(--ht)*3) + (var(--pd)*3) + (var(--mr)*3) + 400px);
-        opacity: 0;
-    }
-    .flexbox {
-        border: 3px solid grey;
-        background: grey;
-        border-radius: 15px;
-        width: var(--wd);
-        height: var(--ht);
-        padding: var(--pd);
-        margin: var(--mr);
-    }
-    .button {
-        border: 3px solid grey;
-        background: grey;
-        border-radius: 15px;
-        width: var(--wd);
-        height: var(--ht);
-        padding: var(--pd);
-        margin: var(--mr);
-    }
-    .hide {
-        border: 3px solid transparent !important;
-        background: transparent !important;
-        visibility: hidden;
-    }
-    .stats_block {
-        padding: var(--pd);
-        margin: var(--mr);
-    }
-    .input {
-        background: grey;
-        border: 3px solid grey;
-        border-radius: 15px;
-        font-size: 25px;
-        color:white;
-    }
-    #player {
-        background: url(hero/1.png);
-        background-size: cover;
-    }
-    #stats_block {
-        margin-top: 20px;
-        background: brown;
-        border: 3px solid brown;
-        border-radius: 15px;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        /* height: calc(var(--ht)*3); */
-    }
-    #hp_bar {
-        accent-color: red;
-    }
+:root {
+    --wd:50px;
+    --ht:100px;
+    --pd:15px;
+    --mr:10px;
+}
+* {
+    margin: 0px auto;
+}
+body {
+    background: #333;
+    font-size: 25px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc((var(--wd)*3) + (var(--pd)*3) + (var(--mr)*3) + 100px);
+    /* height: calc((var(--ht)+3) + (var(--pd)*3) + (var(--mr)*3) + 400); */
+    border: 3px solid grey;
+    justify-content: center;    
+    background: #333;
+    margin: 0 0 0 0 !important;
+    padding: 20px;
+}
+.message_block {
+    display: inline;
+    padding: 20px;
+    position: absolute;
+    top:800px;
+    height: calc((var(--ht)*3) + (var(--pd)*3) + (var(--mr)*3) + 400px);
+    opacity: 0;
+}
+.flexbox {
+    border: 3px solid grey;
+    background: grey;
+    border-radius: 15px;
+    width: var(--wd);
+    height: var(--ht);
+    padding: var(--pd);
+    margin: var(--mr);
+}
+.button {
+    border: 3px solid grey;
+    background: grey;
+    border-radius: 15px;
+    width: var(--wd);
+    height: var(--ht);
+    padding: var(--pd);
+    margin: var(--mr);
+}
+.hide {
+    border: 3px solid transparent !important;
+    background: transparent !important;
+    visibility: hidden;
+}
+.stats_block {
+    padding: var(--pd);
+    margin: var(--mr);
+}
+.input {
+    background: grey;
+    border: 3px solid grey;
+    border-radius: 15px;
+    font-size: 25px;
+    color:white;
+}
+#player {
+    background: url(hero/1.png);
+    background-size: cover;
+}
+#stats_block {
+    margin-top: 20px;
+    background: brown;
+    border: 3px solid brown;
+    border-radius: 15px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    /* height: calc(var(--ht)*3); */
+}
+#hp_bar {
+    accent-color: red;
+}
