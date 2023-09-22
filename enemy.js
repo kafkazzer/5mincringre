@@ -4,7 +4,7 @@ class Enemy {
   }
   // говорит характеристики
   sayMe() {
-    // console.log(` ${this.id}, ${this.hp}, ${this.dm}`);
+    console.log(` ${this.id}, ${this.hp}, ${this.dm}`);
   }
   // собирает Id в строку (нужно для работы anime), после вызывает ret_strike_all().
   // задержка в 700 нужна, что бы не ломалась анимация (duration*2)+100
@@ -14,7 +14,7 @@ class Enemy {
       temp_id = "#" + `${this.id}`;
       anime({
         targets: temp_id,
-        rotate: 10,
+        rotate: 5,
         duration: 300,
         direction: "alternate",
         scale: 1.2,
@@ -34,7 +34,7 @@ class Enemy {
     temp_id = "#" + `${this.id}`;
     anime({
       targets: temp_id,
-      rotate: 10,
+      rotate: 5,
       duration: 300,
       direction: "alternate",
       scale: 1.2,
@@ -45,7 +45,7 @@ class Enemy {
     hero.mn = hero.mn + temp_en.mn;
     money_val.innerHTML = hero.mn;
     this.null();
-    setTimeout(() => (spam_stop = 0), 700);
+    setTimeout(() => spam_stop = 0, 700);
   }
   //ответный удар, но только одного enemy
   ret_strike() {
@@ -109,6 +109,19 @@ class Enemy {
       direction: "alternate",
       scale: 1.1,
     });
+  }
+  // Запускается из moveTo()
+  taking() {
+    temp_id = "#" + `${this.id}`;
+    anime({
+      targets: temp_id,
+      duration: 200,
+      direction: "alternate",
+      scale: 1.2,
+    });
+    let temp = document.getElementById(this.id);
+    setTimeout(() => temp.classList.add("hide"), 300);
+    setTimeout(() => spam_stop = 0, 700);
   }
   // сброс всех значений
   null() {

@@ -2,6 +2,10 @@ const elements = document.querySelectorAll(".flexbox");
 const player = document.getElementById("player");
 const hp_val = document.getElementById("hp_val");
 const money_val = document.getElementById("money_val");
+const heading = document.getElementById("heading");
+const mess_text = document.getElementById("mess_text");
+const option1 = document.getElementById("option1");
+const option2 = document.getElementById("option2");
 
 let temp_id = "";
 let temp_pos = {};

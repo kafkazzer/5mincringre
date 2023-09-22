@@ -20,9 +20,16 @@ class gen {
     if(temp_rand == 1){
       id5.style.backgroundImage = "url(Chest/2.png)";
       id5.classList.remove("hide");
+      enemys['id5'].spawn();
     }
   }
-  d() {}
+  d() {
+    let temp_rand = getRandomInRange(1, 1);
+    if(temp_rand == 1){
+      mes_class.editing('lol', 'just a test message', 'money 100', 0);
+      mes_class.show();
+    }
+  }
   f() {}
   e() {}
   g() {}

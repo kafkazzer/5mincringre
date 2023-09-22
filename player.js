@@ -7,7 +7,7 @@ class Player {
   damage() {
     anime({
       targets: "#player",
-      rotate: 10,
+      rotate: 5,
       duration: 300,
       direction: "alternate",
       scale: 1.2,
@@ -71,8 +71,8 @@ class Player {
       easing: "easeInOutSine",
     });
     setTimeout(() => {
-      spam_stop = 0;
-    }, 1100);
+      temp_en.taking();
+    }, 400);
   }
   //способность 
   cast(){
@@ -88,5 +88,10 @@ class Player {
   }
 }
 let hero = new Player("#player");
-hero.dm = 100;
+hero.dm = 10;
 hero.mn = 0;
+function god_mode(){
+  hero.dm = 100;
+  hero.hp = 1000;
+  hero.mn = 1000;
+}
